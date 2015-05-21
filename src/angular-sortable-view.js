@@ -434,12 +434,13 @@
 						var helperRect = clone[0].getBoundingClientRect();
 
 						var body = document.body;
+						var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
 						if(containmentRect){
-							if(targetTop < containmentRect.top + body.scrollTop) // top boundary
-								targetTop = containmentRect.top + body.scrollTop;
-							if(targetTop + helperRect.height > containmentRect.top + body.scrollTop + containmentRect.height) // bottom boundary
-								targetTop = containmentRect.top + body.scrollTop + containmentRect.height - helperRect.height;
+							if(targetTop < containmentRect.top + scrollTop) // top boundary
+								targetTop = containmentRect.top + scrollTop;
+							if(targetTop + helperRect.height > containmentRect.top + scrollTop + containmentRect.height) // bottom boundary
+								targetTop = containmentRect.top + scrollTop + containmentRect.height - helperRect.height;
 							if(targetLeft < containmentRect.left + body.scrollLeft) // left boundary
 								targetLeft = containmentRect.left + body.scrollLeft;
 							if(targetLeft + helperRect.width > containmentRect.left + body.scrollLeft + containmentRect.width) // right boundary
