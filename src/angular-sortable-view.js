@@ -446,7 +446,7 @@
 								targetLeft = containmentRect.left + body.scrollLeft + containmentRect.width - helperRect.width;
 						}
 						this.style.left = targetLeft - body.scrollLeft + 'px';
-						this.style.top = targetTop - body.scrollTop + 'px';
+						this.style.top = targetTop + 'px';
 					};
 
 					var pointerOffset = {
